@@ -15,65 +15,84 @@
 </head>
 <body>
 	<section class="flex justify-center items-center w-screen h-screen bg-[#fcfcfc] p-16">
-		<div class="bg-[#f8f5f2] p-4 h-full flex flex-col justify-center gap-7 min-w-80 max-w-screen-sm border border-gray-200 rounded-xl">
-			<div class="flex flex-col gap-4">
-				<h1 class="text-2xl font-helvetica">BMI Calculator</h1>
-				<p id="introText">Enter the values and click the calculate button to get results.</p>
+		<div class="bg-[#f8f5f2] p-4 h-full  min-w-80 max-w-screen-sm border border-gray-200 rounded-xl">
+			<div id="bmiInputSection" class="flex flex-col justify-center gap-7">
+				<div class="flex flex-col gap-4">
+					<h1 class="text-2xl font-helvetica">BMI Calculator</h1>
+					<p id="introText">Enter the values and click the calculate button to get results.</p>
+				</div>
+				<form class="flex flex-col gap-4 md:gap-8 ">
+					<!-- Gender Input -->
+					<div id="genderInput">
+						<h2 class="heading">Gender</h2>
+						<div class="flex gap-6">
+							<input type="radio" name="gender" id="male" value="small" class="hidden" />
+							<label for="male" class="flex justify-center items-center gap-2 cursor-pointer bg-[#ffffff] text-black px-6 py-2 rounded-md border border-slate-600 hover:bg-slate-600 hover:border-slate-900"><i class="ri-men-line text-black " ></i>Male</label>
+							<input type="radio" name="gender" id="female" value="small" class="hidden"/>
+							<label for="female" class="flex justify-center items-center gap-2 cursor-pointer bg-[#ffffff] text-black px-6 py-2 rounded-md border border-slate-600 hover:bg-slate-600 hover:border-slate-900"><i class="ri-women-line"></i>Female</label>
+						</div>
+					</div>
+		
+					<!-- Age Input -->
+					<div id="ageInput">
+						<h2 class="heading">Age</h2>
+						<input class="inputBorder p-3" id="age" type="number" pattern="[0-9]*" name="age" class="border border-slate-800" />
+					</div>
+		
+					<!-- Height Input -->
+					<div id="heightInput">
+						<h2 class="heading">Height</h2>
+						<div class="flex gap-2 w-full">
+							<!-- Common input for cm -->
+							<input class="inputBorder p-3" id="heightCm" type="number" pattern="[0-9]*" name="heightInCm" placeholder="cm" />
+							<!-- Input for feet (hidden by default) -->
+							<input class="inputBorder p-3 hidden" id="heightFeet" type="number" pattern="[0-9]*" name="heightInFeet" placeholder="Feet" />
+							<!-- Input for inches (hidden by default) -->
+							<input class="inputBorder p-3 hidden" id="heightInches" type="number" pattern="[0-9]*" name="heightInInches" placeholder="Inches" />
+							<select name="unit" id="unit">
+								<option value="cm">cm</option>
+								<option value="in">in</option>
+							</select>
+						</div>
+					</div>
+		
+					<!-- Weight Input -->
+					<div id="weightInput" class="inputClass">
+						<h2 class="heading">Weight</h2>
+						<div class="flex gap-2 w-full">
+							<!-- Input for Kg -->
+							<input class="inputBorder p-3" id="weightKg" type="number" pattern="[0-9]*" name="weightInKg" placeholder="Kg" />
+							<!-- Input for lb (hidden by default) -->
+							<input class="inputBorder p-3 hidden" id="weightPound" type="number" pattern="[0-9]*" name="weightInPound" placeholder="lb" />
+							<select name="unitWeight" id="unitWeight">
+								<option value="kg">Kg</option>
+								<option value="lb">lb</option>
+							</select>
+						</div>
+					</div>
+					<button id="submitBtn" type="submit" class="w-full px-4 py-2 bg-[#ff6f61] text-white text-sm font-medium rounded-md text-center">Calculate</button>
+				</form>
+				<div id="results" class="text-center">Your BMI results will appear here</div>
 			</div>
-			<form class="flex flex-col gap-4 md:gap-8 ">
-				<!-- Gender Input -->
-				<div id="genderInput">
-					<h2 class="heading">Gender</h2>
-					<div class="flex gap-6">
-						<input type="radio" name="gender" id="male" value="small" class="hidden" />
-						<label for="male" class="flex justify-center items-center gap-2 cursor-pointer bg-[#ffffff] text-black px-6 py-2 rounded-md border border-slate-600 hover:bg-slate-600 hover:border-slate-900"><i class="ri-men-line text-black " ></i>Male</label>
-						<input type="radio" name="gender" id="female" value="small" class="hidden"/>
-						<label for="female" class="flex justify-center items-center gap-2 cursor-pointer bg-[#ffffff] text-black px-6 py-2 rounded-md border border-slate-600 hover:bg-slate-600 hover:border-slate-900"><i class="ri-women-line"></i>Female</label>
-					</div>
-				</div>
-	
-				<!-- Age Input -->
-				<div id="ageInput">
-					<h2 class="heading">Age</h2>
-					<input class="inputBorder p-3" id="age" type="number" pattern="[0-9]*" name="age" class="border border-slate-800" />
-				</div>
-	
-				<!-- Height Input -->
-				<div id="heightInput">
-					<h2 class="heading">Height</h2>
-					<div class="flex gap-2 w-full">
-						<!-- Common input for cm -->
-						<input class="inputBorder p-3" id="heightCm" type="number" pattern="[0-9]*" name="heightInCm" placeholder="cm" />
-						<!-- Input for feet (hidden by default) -->
-						<input class="inputBorder p-3 hidden" id="heightFeet" type="number" pattern="[0-9]*" name="heightInFeet" placeholder="Feet" />
-						<!-- Input for inches (hidden by default) -->
-						<input class="inputBorder p-3 hidden" id="heightInches" type="number" pattern="[0-9]*" name="heightInInches" placeholder="Inches" />
-						<select name="unit" id="unit">
-							<option value="cm">cm</option>
-							<option value="in">in</option>
-						</select>
-					</div>
-				</div>
-	
-				<!-- Weight Input -->
-				<div id="weightInput" class="inputClass">
-					<h2 class="heading">Weight</h2>
-					<div class="flex gap-2 w-full">
-						<!-- Input for Kg -->
-						<input class="inputBorder p-3" id="weightKg" type="number" pattern="[0-9]*" name="weightInKg" placeholder="Kg" />
-						<!-- Input for lb (hidden by default) -->
-						<input class="inputBorder p-3 hidden" id="weightPound" type="number" pattern="[0-9]*" name="weightInPound" placeholder="lb" />
-						<select name="unitWeight" id="unitWeight">
-							<option value="kg">Kg</option>
-							<option value="lb">lb</option>
-						</select>
-					</div>
-				</div>
-				<button type="submit" onclick="calculate()" class="w-full px-4 py-2 bg-[#ff6f61] text-white text-sm font-medium rounded-md text-center">Calculate</button>
-			</form>
-			<div id="results" class="text-center">Your BMI results will appear here</div>
+			
+			<!-- Result Section -->
+			<div id="resultSection" class="hidden">
+				<h2>Your result</h2>
+				<div class="w-full border-b-2 border-gray-300"></div>
+				<p>A BMI between 18.5 and 24.9 is considered normal weight, reducing the risk of weight-related health issues.</p>
+				<img src="" alt="">
+				<ul>
+					<li>Healthy BMI Range: </li>
+					<li>Healthy weight for the height: </li>
+					<li>BMI Prime: </li>
+					<li>Ponderal Index: </li>
+				</ul>
+			</div>
 		</div>
 	</section>
+
+	
+
 
 	<script src="./main.js"></script>
 </body>
