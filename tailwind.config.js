@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        helvetica: ['Helvetica Neue', 'sans-serif'],
+        Familjen: ["Familjen Grotesk", "sans-serif"],
       },
       colors: {
         green: {

@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const healthyWeightRange = document.getElementById("healthyWeightRange");
     const bmiPrimeText = document.getElementById("bmiPrime");
     const ponderalIndexText = document.getElementById("ponderalIndex");
+    const bmiRangeText = document.getElementById("bmiRange");
 
     appStart.addEventListener('click', () => {
         coverPage.classList.add('hidden');
@@ -161,6 +162,9 @@ document.addEventListener("DOMContentLoaded", () => {
         bmiPrimeText.textContent = bmiPrime;
         ponderalIndexText.textContent = ponderalIndex;
 
+        // Update BMI Range text dynamically
+        bmiRangeText.textContent = `Healthy BMI Range: 18.5 - 24.9 (${category})`;
+
         // Update progress bar
         const progressBarWidth = Math.min((bmi / 40) * 100, 100); // Assuming 40 is the max BMI shown
         bmiProgressBar.style.width = `${progressBarWidth}%`;
@@ -173,15 +177,15 @@ document.addEventListener("DOMContentLoaded", () => {
             bmiProgressBar.classList.remove('bg-blue-500', 'bg-yellow-500', 'bg-red-500');
             bmiProgressBar.classList.add('bg-green-500');
         } else if (category === "Overweight") {
-            bmiProgressBar.classList.remove('bg-blue-500', 'bg-green-500', 'bg-red-500');
+            bmiProgressBar.classList.remove('bg-green-500', 'bg-blue-500', 'bg-red-500');
             bmiProgressBar.classList.add('bg-yellow-500');
         } else {
-            bmiProgressBar.classList.remove('bg-blue-500', 'bg-green-500', 'bg-yellow-500');
+            bmiProgressBar.classList.remove('bg-green-500', 'bg-yellow-500', 'bg-blue-500');
             bmiProgressBar.classList.add('bg-red-500');
         }
 
-        // Hide input section and show result section
-        bmiInputSection.classList.add("hidden");
-        resultSection.classList.remove("hidden");
+        // Display result section and hide input section
+        bmiInputSection.classList.add('hidden');
+        resultSection.classList.remove('hidden');
     }
 });

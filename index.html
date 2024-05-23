@@ -10,24 +10,24 @@
     <!-- Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet"/>
     <!-- Fonts -->
-    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <title>BMI Calculator</title>
 </head>
 <body>
     <section class="flex justify-center items-center w-screen h-screen bg-[#aadadc] p-16">
-        <div class="bg-[#fafafa] h-full min-w-80 w-96 border border-[#aaaaaa] rounded-xl">
+        <div class="bg-[#fafafa] h-screen min-w-80 w-96 border border-[#aaaaaa] rounded-xl">
             <article id="coverPage" class="w-full h-full px-6 pt-8">
                 <div class="flex flex-col justify-between w-full h-full">
                     <div class="flex flex-col gap-2">
                         <img src="./assets/cover 01.png" class="h-10 w-10" alt="cover image">
-                        <p class="font-helvetica text-3xl leading-8">Calculate your</p>
-                        <p class="font-helvetica text-4xl leading-10 font-bold">Body Mass Index</p>
+                        <p class="font-Familjen text-3xl leading-8">Calculate your</p>
+                        <p class="font-Familjen text-4xl leading-10 font-bold">Body Mass Index</p>
                         <div class="border-b border-[#aaaaaa]"></div>
-                        <p class="font-helvetica leading-tight text-sm">Use this simple tool to calculate your body mass index (BMI). BMI is a widely used measure to find out whether you’re a healthy weight for your height. </p>
+                        <p class="font-Familjen leading-tight text-sm">Use this simple tool to calculate your body mass index (BMI). BMI is a widely used measure to find out whether you’re a healthy weight for your height. </p>
                     </div>
                     <div id="appStart" class="flex flex-col justify-center items-center gap-2 mt-9">
                         <img src="./assets/fast-forward.gif" alt="start the application" class="h-8 cursor-pointer">
-                        <p class="font-helvetica text-xs leading-4 cursor-pointer">BMI CALCULATOR</p>
+                        <p class="font-Familjen text-xs leading-4 cursor-pointer">BMI CALCULATOR</p>
                     </div>
                     <img src="./assets/cover 03.png" alt="app start icon" class="w-full">
                 </div>
@@ -36,8 +36,8 @@
             <article id="bmiInputSection" class="hidden p-6 h-full">
                 <div class="flex flex-col justify-between h-full ">
                     <div class="flex flex-col gap-2">
-                        <h1 class="text-2xl font-helvetica font-bold">BMI Calculator</h1>
-                        <p id="introText" class="font-helvetica text-sm">Enter the values and click the calculate button to get results.</p>
+                        <h1 class="text-2xl font-Familjen font-bold">BMI Calculator</h1>
+                        <p id="introText" class="font-Familjen text-sm">Enter the values and click the calculate button to get results.</p>
                     </div>
                     <form id="bmiForm" class="flex flex-col gap-2 md:gap-4">
                         <!-- Gender Input -->
@@ -97,7 +97,7 @@
             <article id="resultSection" class="hidden p-6 h-full">
                 <div class="flex flex-col justify-between h-full">
                     <div class="flex flex-col">
-                        <h2 class="text-2xl font-helvetica font-bold">Your result</h2>
+                        <h2 class="text-2xl font-Familjen font-bold">Your result</h2>
                         <div class="w-full border-b-2 border-gray-300 my-4"></div>
                     </div>
                     <div class="flex flex-col">
@@ -109,7 +109,7 @@
                         </div>
                         <div class="flex flex-col">
                             <ul class="mt-4 text-sm">
-                                <li>Healthy BMI Range: 18.5 - 24.9</li>
+                                <li id="bmiRange">Healthy BMI Range: 18.5 - 24.9</li>
                                 <li>Healthy weight for your height: <span id="healthyWeightRange"></span></li>
                                 <li>BMI Prime: <span id="bmiPrime"></span></li>
                                 <li>Ponderal Index: <span id="ponderalIndex"></span></li>
@@ -117,7 +117,6 @@
                             <button id="refresh" type="submit" class="w-full px-4 py-3 bg-[#e2711d] text-white text-sm font-medium rounded-md text-center mt-10">Try Again</button>
                         </div>
                     </div>
-                    
                 </div>
             </article>
         </div>

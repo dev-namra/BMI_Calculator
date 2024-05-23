@@ -627,16 +627,8 @@ video {
   flex-direction: column;
 }
 
-.items-end {
-  align-items: flex-end;
-}
-
 .items-center {
   align-items: center;
-}
-
-.justify-end {
-  justify-content: flex-end;
 }
 
 .justify-center {
@@ -788,8 +780,8 @@ video {
   text-align: center;
 }
 
-.font-helvetica {
-  font-family: Helvetica Neue, sans-serif;
+.font-Familjen {
+  font-family: Familjen Grotesk, sans-serif;
 }
 
 .text-2xl {
@@ -877,7 +869,7 @@ input[type="radio"]:checked + label{
 }
 
 .heading {
-  font-family: 'Helvetica Neue', 'sans-serif';
+  font-family: "Familjen Grotesk", sans-serif;
   font-size: 1rem;
 }
 
