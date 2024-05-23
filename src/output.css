@@ -602,10 +602,6 @@ video {
   align-items: center;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
 }
@@ -683,11 +679,6 @@ video {
 .bg-\[\#fafafa\] {
   --tw-bg-opacity: 1;
   background-color: rgb(250 250 250 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#ff6f61\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 111 97 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#ffffff\] {
@@ -781,11 +772,6 @@ input[type="radio"]:checked + label{
 .heading {
   font-family: 'Helvetica Neue', 'sans-serif';
   font-size: 1rem;
-}
-
-.hover\:bg-\[\#fefae0\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 250 224 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-\[\#e5e5e5\]:hover {
