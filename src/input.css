@@ -5,7 +5,7 @@
 @import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');
 
 input[type="radio"]:checked + label{
-    background-color: #58ba83;
+    background-color: #fefae0;
   }
 
   .inputBorder {
@@ -17,7 +17,6 @@ input[type="radio"]:checked + label{
   .inputClass{
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
   }
 
   .heading {
